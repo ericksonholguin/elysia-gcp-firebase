@@ -43,7 +43,7 @@ package-lock.json
 **/*.bun
 
 # GCP Files
-src/config/elysia-gcp-firebase-firebase-adminsdk-fbsvc-f6e47386d3.json
+service-account-key.json
 
 # Binaries
 server
