@@ -62,4 +62,10 @@ export class UsersRepository {
   async delete(id: string): Promise<void> {
     await firebase.firestore.collection(this.collection).doc(id).delete();
   }
+
+  async count(): Promise<number> {
+    const snapshot = await firebase.firestore.collection(this.collection).get();
+
+    return snapshot.size;
+  }
 }

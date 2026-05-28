@@ -9,7 +9,11 @@ export class UsersService {
   }
 
   async retrieve() {
-    const usersFound = await this.usersRepository.retrieve();
+    const [usersFound, totalCount] = await Promise.all([
+      this.usersRepository.retrieve(),
+      this.usersRepository.count(),
+    ]);
+
     return {
       message: "Users retrieved successfully",
       data: usersFound,
@@ -17,7 +21,7 @@ export class UsersService {
         currentPage: 1,
         pageSize: 10,
         totalPages: 1,
-        totalCount: 10,
+        totalCount,
       },
       error: null,
     };
