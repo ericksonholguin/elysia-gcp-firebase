@@ -30,8 +30,7 @@ ENV NODE_ENV=production
 ENV PORT=8080
 
 # Copiar credenciales firebase SOLO para local/dev
-COPY ./src/config/elysia-gcp-firebase-firebase-adminsdk-fbsvc-f6e47386d3.json ./firebase-service-account.json
-
+# COPY ./src/config/elysia-gcp-firebase-firebase-adminsdk-fbsvc-f6e47386d3.json ./firebase-service-account.json
 
 CMD ["./server"]
 
