@@ -25,7 +25,10 @@ export class UsersRepository {
   }
 
   async retrieve(): Promise<User[]> {
-    const snapshot = await firebase.firestore.collection(this.collection).get();
+    const snapshot = await firebase.firestore
+      .collection(this.collection)
+      .orderBy("name", "asc")
+      .get();
 
     const data = snapshot.docs.map((doc) => UserMapper.fromModel(doc.data()));
 
