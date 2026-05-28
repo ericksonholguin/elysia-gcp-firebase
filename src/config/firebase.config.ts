@@ -1,13 +1,7 @@
-import admin, { firestore } from "firebase-admin";
-
-const isProduction = process.env.NODE_ENV === "production";
+import admin from "firebase-admin";
 
 const app = admin.initializeApp({
-  credential: admin.credential.cert(
-    isProduction
-      ? "./firebase-service-account.json"
-      : "src/config/elysia-gcp-firebase-firebase-adminsdk-fbsvc-f6e47386d3.json",
-  ),
+  credential: admin.credential.applicationDefault(),
 });
 
 export default { firestore: admin.firestore(app) };
