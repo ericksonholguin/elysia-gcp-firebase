@@ -44,3 +44,6 @@ package-lock.json
 
 # GCP Files
 src/config/elysia-gcp-firebase-firebase-adminsdk-fbsvc-f6e47386d3.json
+
+# Binaries
+server
